@@ -335,7 +335,7 @@ function! s:OpenGitBuffer(content)
     if exists('b:is_git_msg_buffer') && b:is_git_msg_buffer
         enew!
     else
-        execute g:git_command_edit
+        execute g:git_command_edit . ' | only'
     endif
 
     setlocal buftype=nofile readonly modifiable
